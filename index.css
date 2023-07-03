@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: #ddd;
+}
+
+.part {
+    height: 100vh;
+}
+
+.title {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.part0 {
+    background-color: rgb(30, 30, 30);
+}
+
+.catalogue {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 100px;
+}
+
+.catalogue::before {
+    content: '';
+    float: left;
+    width: 500px;
+    height: 500px;
+    shape-outside: polygon(0 0,
+            100% 0,
+            50% 50%,
+            100% 100%,
+            0% 100%);
+}
