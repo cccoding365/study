@@ -108,3 +108,42 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 0 9999px rgba(0, 0, 0, .75);
 }
+
+/* 外圆角选项卡 */
+.tab-x {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-left: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.tab-a {
+    --backgroundColor: #fff;
+    background-color: var(--backgroundColor);
+    line-height: 20px;
+    padding: 10px 20px;
+    border-radius: 16px 16px 0 0;
+    filter: drop-shadow(0 -1px 1px rgba(0,0,0,.1));
+    position: relative;
+}
+/* 创建外侧圆弧 */
+.tab-a::before,
+.tab-a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 16px; height: 16px;
+}
+.tab-a::before {
+    background: radial-gradient(circle at 0 0, transparent, transparent 16px, var(--backgroundColor) 17px);
+    right: 100%;
+}
+.tab-a::after {
+    background: radial-gradient(circle at 100% 0, transparent, transparent 16px, var(--backgroundColor) 17px);
+    left: 100%;
+}
+.tab-a.active {
+    --backgroundColor: teal;
+    color: #fff;
+    z-index: 1;
+}
