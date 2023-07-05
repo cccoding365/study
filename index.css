@@ -147,3 +147,11 @@ body {
     color: #fff;
     z-index: 1;
 }
+
+/* 径向渐变实现外部圆角 */
+.quar-radius {
+    width: 96px; height: 96px;
+    border-radius: 0 0 50% 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    box-shadow: 0 0 0 100px teal;
+}
