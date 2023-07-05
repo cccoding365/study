@@ -10,7 +10,7 @@ body {
 }
 
 .part {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1440px;
     padding: 50px 30px;
 }
@@ -77,4 +77,34 @@ body {
     bottom: 0;
     margin: auto;
     cursor: move;
+}
+
+.guide-x {
+    text-align: center;
+    padding: 100px 16px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, transparent);
+}
+
+.guide-overlay-shape {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .75);
 }
