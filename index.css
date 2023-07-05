@@ -115,33 +115,39 @@ body {
     flex-direction: row-reverse;
     justify-content: flex-end;
     padding-left: 20px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
+
 .tab-a {
     --backgroundColor: #fff;
     background-color: var(--backgroundColor);
     line-height: 20px;
     padding: 10px 20px;
     border-radius: 16px 16px 0 0;
-    filter: drop-shadow(0 -1px 1px rgba(0,0,0,.1));
+    filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, .1));
     position: relative;
 }
+
 /* 创建外侧圆弧 */
 .tab-a::before,
 .tab-a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    width: 16px; height: 16px;
+    width: 16px;
+    height: 16px;
 }
+
 .tab-a::before {
     background: radial-gradient(circle at 0 0, transparent, transparent 16px, var(--backgroundColor) 17px);
     right: 100%;
 }
+
 .tab-a::after {
     background: radial-gradient(circle at 100% 0, transparent, transparent 16px, var(--backgroundColor) 17px);
     left: 100%;
 }
+
 .tab-a.active {
     --backgroundColor: teal;
     color: #fff;
@@ -150,8 +156,38 @@ body {
 
 /* 径向渐变实现外部圆角 */
 .quar-radius {
-    width: 96px; height: 96px;
+    width: 96px;
+    height: 96px;
     border-radius: 0 0 50% 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     box-shadow: 0 0 0 100px teal;
+}
+
+/* 五角星镂空效果 */
+.shape-hollow-x {
+    width: 600px;
+    max-width: 100%;
+    height: 300px;
+    background: linear-gradient(red, green);
+    position: relative;
+}
+
+.shape-hollow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, .75);
+    /* 实际开发需要-webkit- */
+    -webkit-mask: no-repeat center;
+    mask: no-repeat center;
+    -webkit-mask-image: linear-gradient(black, black), url(./image/star.svg);
+    mask-image: linear-gradient(black, black), url(./image/star.svg);
+    -webkit-mask-size: cover, 120px 120px;
+    mask-size: cover, 120px 120px;
+    -webkit-mask-composite: exclude;
+    mask-composite: exclude;
+    -webkit-mask-composite: source-out;
 }
