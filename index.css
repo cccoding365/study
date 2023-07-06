@@ -201,3 +201,11 @@ body {
     background-blend-mode: darken;
     filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
+
+.girl {
+    width: 256px; height: 171px;
+    background: rgba(238,179,163, .8) url(./image/mm.jpg);
+    background-size: 100%;
+    background-blend-mode: soft-light;
+    filter: contrast(1.1);
+}
