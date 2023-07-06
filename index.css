@@ -191,3 +191,13 @@ body {
     mask-composite: exclude;
     -webkit-mask-composite: source-out;
 }
+
+/* 白天照片模拟黑夜 */
+.night {
+    width: 256px;
+    height: 256px;
+    background: rgba(0, 40, 140, .6) url(./image/house-bed.jpg);
+    background-size: 100%;
+    background-blend-mode: darken;
+    filter: brightness(80%) grayscale(20%) contrast(1.2);
+}
