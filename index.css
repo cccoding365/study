@@ -251,3 +251,32 @@ body {
     mix-blend-mode: multiply;
     filter: brightness(1.3) blur(2px) contrast(2);
 }
+
+/* 彩铅 */
+.pencil {
+    width: 256px;
+    height: 192px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pencil::before {
+    content: '';
+    display: block;
+    height: inherit;
+    background: url(./image/example.jpg) -1px -1px, url(./image/example.jpg);
+    background-size: calc(100% + 1px);
+    background-blend-mode: difference;
+    filter: brightness(2) invert(1) grayscale(1);
+}
+
+.pencil::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: inherit;
+    width: inherit;
+    background: url(./image/example.jpg);
+    background-size: 100%;
+}
