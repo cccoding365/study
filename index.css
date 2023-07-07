@@ -645,3 +645,128 @@ body {
     color: blue;
     background-color: #fff;
 }
+
+/* 打点动画 */
+dot-a {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25ex;
+    overflow: hidden;
+}
+
+dot-a::before {
+    display: block;
+    content: '...\A..\A.';
+    white-space: pre-wrap;
+    animation: dot1 3s infinite step-start both;
+}
+
+@keyframes dot1 {
+    33% {
+        transform: translateY(-2em);
+    }
+
+    66% {
+        transform: translateY(-1em);
+    }
+}
+
+dot-b::before {
+    content: '...';
+    position: absolute;
+    animation: dot2 3s infinite step-start both;
+}
+
+dot-b:after {
+    content: '...';
+    color: transparent;
+}
+
+@keyframes dot2 {
+    33% {
+        content: '.';
+    }
+
+    66% {
+        content: '..';
+    }
+}
+
+dot-c {
+    display: inline-block;
+    width: 3ch;
+    text-indent: -1ch;
+    vertical-align: -.25ex;
+    overflow: hidden;
+    animation: dot3 3s infinite step-start both;
+    font-family: Consolas, Monaco, monospace;
+}
+
+@keyframes dot3 {
+    33% {
+        text-indent: 0;
+    }
+
+    66% {
+        text-indent: -2ch;
+    }
+}
+
+dot-d::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: currentColor;
+    box-shadow: 4px 0, 8px 0;
+    animation: dot4 3s infinite step-start both;
+    margin-top: 1em;
+}
+
+dot-d::after {
+    content: '...';
+    color: transparent;
+}
+
+@keyframes dot4 {
+    33% {
+        box-shadow: none;
+    }
+
+    66% {
+        box-shadow: 4px 0;
+    }
+}
+
+dot-e::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    padding: 0 2px;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    background-color: currentColor;
+    background-clip: content-box;
+    box-sizing: border-box;
+    animation: dot5 3s infinite step-start both;
+    margin-top: 1em;
+}
+
+dot-e::after {
+    content: '...';
+    color: transparent;
+}
+
+@keyframes dot5 {
+    33% {
+        border-right-color: transparent;
+        background-color: transparent;
+    }
+
+    66% {
+        border-right-color: transparent;
+    }
+}
