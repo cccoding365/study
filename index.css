@@ -485,3 +485,163 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* 3D示意 */
+.pie-spin-3d {
+    position: relative;
+    width: 256px;
+    perspective: 600px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border: 1px dotted;
+    transition: perspective .2s;
+}
+
+[style*="none"]>.pie-3d-size {
+    transform: rotateY(0);
+}
+
+.pie-3d-size {
+    width: 128px;
+    height: 128px;
+    margin: auto;
+    transform: rotateY(-45deg);
+    position: relative;
+    transform-style: preserve-3d;
+    font-size: 14px;
+    transition: transform .2s;
+}
+
+.pie-3d-spin-l,
+.pie-3d-spin-r,
+.pie-3d-fill-r,
+.pie-3d-left,
+.pie-3d-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.pie-3d-spin-l {
+    left: 50%;
+    transform-origin: left;
+    transform: translateZ(-190px);
+    background-color: green;
+    opacity: .7;
+    outline: 1px solid green;
+}
+
+.pie-3d-spin-l::before {
+    display: block;
+    content: '左旋转';
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+}
+
+.pie-3d-spin-l::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: red;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie-3d-spin-r {
+    transform-origin: right;
+    transform: translateZ(-200px);
+    right: 50%;
+    background-color: teal;
+    opacity: .7;
+    outline: 1px solid teal;
+}
+
+.pie-3d-spin-r::before {
+    display: block;
+    content: '右旋转';
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+}
+
+.pie-3d-spin-r::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: red;
+    right: 0;
+    top: 50%;
+    margin-top: -2px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie-3d-fill-r {
+    transform: translateZ(-90px);
+    right: 0;
+    background-color: rgba(0, 128, 128, .7);
+    outline: 1px solid rgba(0, 128, 128, .7);
+}
+
+.pie-3d-fill-r::before {
+    content: '右半区覆盖层';
+    position: absolute;
+    top: -24px;
+    white-space: nowrap;
+    color: teal;
+    left: 0;
+}
+
+.pie-3d-left,
+.pie-3d-right {
+    background-color: red;
+    opacity: .5;
+}
+
+.pie-3d-right {
+    right: 0;
+    transform: translateZ(-10px);
+}
+
+.pie-3d-left::before {
+    content: '左半可视区域';
+    position: absolute;
+    top: -24px;
+    white-space: nowrap;
+    color: red;
+    right: 0;
+}
+
+.pie-3d-right::before {
+    content: '右半可视区域';
+    position: absolute;
+    top: -24px;
+    white-space: nowrap;
+    color: red;
+    left: 0;
+}
+
+.pie-3d {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: .75;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+    transform: translateZ(10px);
+}
+
+.pie-3d::before {
+    content: '可视圆角大小';
+    position: absolute;
+    right: 80%;
+    top: 50%;
+    margin-top: -20px;
+    white-space: nowrap;
+    mix-blend-mode: difference;
+    color: blue;
+    background-color: #fff;
+}
