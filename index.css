@@ -203,9 +203,20 @@ body {
 }
 
 .girl {
-    width: 256px; height: 171px;
-    background: rgba(238,179,163, .8) url(./image/mm.jpg);
+    width: 256px;
+    height: 171px;
+    background: rgba(238, 179, 163, .8) url(./image/mm.jpg);
     background-size: 100%;
     background-blend-mode: soft-light;
     filter: contrast(1.1);
+}
+
+/* 素描 */
+.sketch {
+    width: 256px;
+    height: 192px;
+    background: url(./image/example.jpg) -2px -2px, url(./image/example.jpg);
+    background-size: 258px 194px;
+    background-blend-mode: difference;
+    filter: brightness(3) invert(1) grayscale(1);
 }
