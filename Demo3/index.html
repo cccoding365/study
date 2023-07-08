@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>图像裁剪效果</title>
+        <title>图像镂空</title>
     </head>
 
     <style>
@@ -16,14 +16,31 @@
         }
 
         body {
-            overflow: hidden;
+            background-image: url(./picture.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        img {
-            width: 100vw;
+        body::before {
+            content: '图像镂空效果';
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 99;
+
+            border-radius: 0 0 0 10px;
         }
 
-        .clip-shape {
+        body::after {
+            content: '';
             width: 150px;
             height: 150px;
             outline: 9999px solid rgba(0, 0, 0, .7);
@@ -38,8 +55,6 @@
     </style>
 
     <body>
-        <div class="clip-shape"></div>
-        <img src="./picture.jpg" />
     </body>
 
 </html>
