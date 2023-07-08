@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>更新引导</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            position: absolute;
+            right: 10%;
+            top: 10%;
+            transform: translate(50%, -50%);
+            text-align: center;
+
+            background-color: red;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 25px;
+            border: none;
+            border-radius: 3px;
+            animation: twinkle 1s infinite 2.5s;
+        }
+
+        @keyframes twinkle {
+            50% {
+                scale: 1.05
+            }
+        }
+
+        body::before {
+            content: '更新引导效果';
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+
+            border-radius: 0 0 10px 0;
+        }
+
+        body::after {
+            content: '';
+            width: 150px;
+            height: 60px;
+
+            position: absolute;
+            right: 10%;
+            top: 10%;
+            transform: translate(50%, -50%);
+            margin: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, .75);
+            animation: move 3s ease;
+        }
+
+        @keyframes move {
+            0% {
+                right: 50%;
+                top: 50%;
+            }
+
+            100% {
+                right: 10%;
+                top: 10%;
+            }
+        }
+    </style>
+
+    <body>
+        <button class="button">发 布</button>
+    </body>
+
+</html>
