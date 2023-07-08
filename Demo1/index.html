@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>箭头形布局</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .catalogue {
+            line-height: 20vh;
+        }
+
+        .catalogue::before {
+            content: '';
+            float: left;
+            width: 30vw;
+            height: 100vh;
+            shape-outside: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%);
+        }
+
+        body::before {
+            content: '箭头形布局效果';
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            border-radius: 0 0 0 10px;
+        }
+    </style>
+
+    <body>
+        <div class="catalogue">
+            <h2> Part 0. </h2>
+            <h2> Part 1. </h2>
+            <h2> Part 2. </h2>
+            <h2> Part 3. </h2>
+            <h2> Part 4. </h2>
+        </div>
+    </body>
+
+</html>
