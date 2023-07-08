@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>星星镂空</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to top, rgb(30, 150, 0), rgb(255, 242, 0), rgb(255, 0, 0));
+            height: 100vh;
+        }
+
+        body::before {
+            content: '星星镂空效果';
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+
+            border-radius: 0 0 10px 0;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: rgba(0, 0, 0, .7);
+
+            -webkit-mask: no-repeat center;
+            -webkit-mask-image: linear-gradient(black, black), url(./star.svg);
+            -webkit-mask-size: cover, 250px 250px;
+            -webkit-mask-composite: exclude;
+            -webkit-mask-composite: source-out;
+
+            mask: no-repeat center;
+            mask-image: linear-gradient(black, black), url(./star.svg);
+            mask-size: cover, 250px 250px;
+            mask-composite: exclude;
+            mask-composite: source-out;
+        }
+    </style>
+
+    <body>
+    </body>
+
+</html>
