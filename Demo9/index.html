@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>色彩流动效果</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body::before {
+            content: '色彩流动效果';
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to top right, red, orange, yellow, green, cyan, blue, purple);
+            animation: hue 1s linear infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top, red, orange, yellow, green, cyan, blue, purple);
+            animation: hue 3s linear infinite;
+        }
+
+        @keyframes hue {
+            from {
+                filter: hue-rotate(0deg);
+            }
+
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+
+    <body>
+    </body>
+
+</html>
