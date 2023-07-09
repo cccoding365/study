@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSSGram</title>
+        <link rel="stylesheet" href="./CSSGram.css">
+    </head>
+
+    <style>
+        body {
+            padding-top: 70px;
+        }
+
+        body::before {
+            content: 'CSSGram';
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 99;
+
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
+
+    <body>
+        <ul class="demo__list">
+            <li class="demo__item">
+                <figure>
+                    <img>
+                    <figcaption>#NoFilter</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="_1977">
+                    <img>
+                    <figcaption>1977</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="aden">
+                    <img>
+                    <figcaption>Aden</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="brannan">
+                    <img>
+                    <figcaption>Brannan</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="brooklyn">
+                    <img>
+                    <figcaption>Brooklyn</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="clarendon">
+                    <img>
+                    <figcaption>Clarendon</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="earlybird">
+                    <img>
+                    <figcaption>Earlybird</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="gingham">
+                    <img>
+                    <figcaption>Gingham</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="hudson">
+                    <img>
+                    <figcaption>Hudson</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="inkwell">
+                    <img>
+                    <figcaption>Inkwell</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="kelvin">
+                    <img>
+                    <figcaption>Kelvin</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="lark">
+                    <img>
+                    <figcaption>Lark</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="lofi">
+                    <img>
+                    <figcaption>Lo-Fi</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="maven">
+                    <img>
+                    <figcaption>Maven</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="mayfair">
+                    <img>
+                    <figcaption>Mayfair</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="moon">
+                    <img>
+                    <figcaption>Moon</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="nashville">
+                    <img>
+                    <figcaption>Nashville</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="perpetua">
+                    <img>
+                    <figcaption>Perpetua</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="reyes">
+                    <img>
+                    <figcaption>Reyes</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="rise">
+                    <img>
+                    <figcaption>Rise</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="slumber">
+                    <img>
+                    <figcaption>Slumber</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="stinson">
+                    <img>
+                    <figcaption>Stinson</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="toaster">
+                    <img>
+                    <figcaption>Toaster</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="valencia">
+                    <img>
+                    <figcaption>Valencia</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="walden">
+                    <img>
+                    <figcaption>Walden</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="willow">
+                    <img>
+                    <figcaption>Willow</figcaption>
+                </figure>
+            </li>
+            <li class="demo__item">
+                <figure class="xpro2">
+                    <img>
+                    <figcaption>X-pro II</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </body>
+
+    <script>
+        // 获取具有 'demo__item' 类的元素集合
+        var elements = document.querySelectorAll('.demo__item')
+
+        // 循环遍历每个元素
+        elements.forEach(function (element) {
+            // 获取当前元素中的子元素 img
+            var imgElement = element.querySelector('img')
+
+            // 设置 img 元素的 src 属性
+            imgElement.src = './landscape.jpg'
+        });
+
+    </script>
+
+</html>
