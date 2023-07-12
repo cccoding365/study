@@ -78,10 +78,32 @@
                 top: 10%;
             }
         }
+
+        .buttons {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 9999;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 30px;
+        }
     </style>
 
     <body>
         <button class="button">发 布</button>
+        <div class="buttons">
+            <a href="https://www.hecongcong.com/sharing/Demo3/index.html">上一个</a>
+            <a href="https://www.hecongcong.com/sharing/Demo5/index.html">下一个</a>
+        </div>
     </body>
 
 </html>
