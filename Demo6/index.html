@@ -200,6 +200,15 @@
     </body>
 
     <script>
+        var loadingTime = 0 //加载时间
+        var startTime = new Date().getTime()
+        window.onload = () => { //加载时间
+            loadingTime = new Date().getTime() - startTime
+            console.log(loadingTime)
+        }
+
+
+
         // 获取具有 'demo__item' 类的元素集合
         var elements = document.querySelectorAll('.demo__item')
 
