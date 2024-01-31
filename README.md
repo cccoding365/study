@@ -1,3 +1,3 @@
-# Technology Sharing
+# Technology Study
 
-## 分享我的编程技术知识
+## 分享我学习过程中编写的一些小案例
