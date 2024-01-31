@@ -5,32 +5,65 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Drag and Drop API</title>
     </head>
 
     <style>
-        #p1 {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-            color: aliceblue;
+        .display-container {
+            display: flex;
+            gap: 10px;
+            height: 150px;
         }
 
-        #target {
-            width: 500px;
-            height: 500px;
+        .box-item {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 32px;
+            color: white;
+            background-color: orange;
+        }
+
+        .drop-container {
+            display: flex;
+            gap: 10px;
+            width: 320px;
+            height: 320px;
+            flex-wrap: wrap;
+        }
+
+        .box-container {
+            width: 100px;
+            height: 100px;
             background-color: antiquewhite;
         }
     </style>
 
     <body>
-        <p id="p1" draggable="true" ondragstart="dragstart_handler(event)">
-            这是一个可拖拽的元素
-        </p>
-        <div id="target" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
-            这是一个可放置拖拽元素的区域
+        <div class="display-container">
+            <div id="b1" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">1</div>
+            <div id="b2" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">2</div>
+            <div id="b3" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">3</div>
+            <div id="b4" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">4</div>
+            <div id="b5" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">5</div>
+            <div id="b6" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">6</div>
+            <div id="b7" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">7</div>
+            <div id="b8" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">8</div>
+            <div id="b9" draggable="true" ondragstart="dragstart_handler(event)" class="box-item">9</div>
         </div>
 
+        <div class="drop-container">
+            <div id="c1" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c2" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c3" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c4" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c5" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c6" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c7" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c8" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+            <div id="c9" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" class="box-container"></div>
+        </div>
     </body>
 
     <script>
@@ -47,6 +80,10 @@
             ev.preventDefault();
             // Get the id of the target and add the moved element to the target's DOM
             var data = ev.dataTransfer.getData("application/my-app");
+
+            // 如果容器内已经存在子节点 则不能再放入
+            if (ev.target.hasChildNodes()) return;
+
             ev.target.appendChild(document.getElementById(data));
         }
     </script>
