@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Auto middle ellipsis</title>
+    </head>
+
+    <style>
+        .con {
+            font-size: 14px;
+            color: #666;
+            width: 600px;
+            margin: 50px auto;
+            border-radius: 8px;
+            padding: 15px;
+            overflow: hidden;
+            resize: horizontal;
+            box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+        }
+
+        .wrap {
+            position: relative;
+            line-height: 2;
+            height: 2em;
+            padding: 0 10px;
+            overflow: hidden;
+            background: #fff;
+            margin: 5px 0;
+        }
+
+        .wrap:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .title {
+            display: block;
+            position: relative;
+            background: inherit;
+            text-align: justify;
+            height: 2em;
+            overflow: hidden;
+            top: -4em;
+        }
+
+        .txt {
+            display: block;
+            max-height: 4em;
+        }
+
+        .title::before {
+            content: attr(title);
+            width: 50%;
+            float: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            direction: rtl;
+        }
+    </style>
+
+    <body>
+        <ul class="con">
+            <li class="wrap">
+                <span class="txt">这是一个不算很长的标题 - 2024-03-28</span>
+                <span class="title" title="这是一个不算很长的标题 - 2024-03-28">这是一个不算很长的标题 - 2024-03-28</span>
+            </li>
+            <li class="wrap">
+                <span class="txt">这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题 - 2024-03-28</span>
+                <span class="title" title="这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题 - 2024-03-28">
+                    这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题 - 2024-03-28
+                </span>
+            </li>
+            <li class="wrap">
+                <span class="txt">文本太长时鼠标悬浮显示title - 2024-03-28</span>
+                <span class="title" title="文本太长时鼠标悬浮显示title - 2024-03-28">文本太长时鼠标悬浮显示title - 2024-03-28</span>
+            </li>
+        </ul>
+    </body>
+
+</html>
